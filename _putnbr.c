@@ -15,7 +15,7 @@ int _putnbr(int n)
 
 	if (n >= 0 && n <= 9)
 	{
-        len++;
+		len++;
 		n += 48;
 		write(1, &n, 1);
 	}
@@ -25,15 +25,15 @@ int _putnbr(int n)
 		len += _putnbr(n % 10);
 	}
 	else if (n == -2147483648)
-    {
-        len += 11;
+	{
+		len += 11;
 		write(1, "-2147483648", len);
-    }
+	}
 	else if (n < 0)
 	{
-        len++;
+		len++;
 		write(1, "-", 1);
 		len += _putnbr(n * (-1));
 	}
-    return (len);
+	return (len);
 }

@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 				len += _puts(va_arg(args, char*));
 			else if (next_c == 'i' || next_c == 'd')
 				len += _putnbr(va_arg(args, int));
+			else if (next_c == 'b')
+				len += _binary(va_arg(args, unsigned int));
 			else
 			{
 				len += _putchar(format[i - 1]);
